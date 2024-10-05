@@ -1,12 +1,17 @@
+"use client";
+
 import FlightSearchCard from "@/components/fligh-search-card";
+import FlightDetails from "@/components/flight-details";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import VaulDrawer from "@/components/ui/drawer";
 import { X, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function FlightsResults() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   return (
     <main className="flex flex-col">
       <header className="flex justify-around items-center h-24 border-b">
@@ -67,6 +72,8 @@ export default function FlightsResults() {
         <div className="my-10 w-full grid grid-cols-1 gap-y-6">
           <VaulDrawer
             // customClass="w-full"
+            isOpen={isDrawerOpen}
+            onOpenChange={setIsDrawerOpen}
             drawerDirection="right"
             triggerChildren={
               <Card className="flex justify-between cursor-pointer">
@@ -147,7 +154,7 @@ export default function FlightsResults() {
               </Card>
             }
             contentChildren={
-              <div className="h-screen">kitt frontend assignment github </div>
+              <FlightDetails onClose={() => setIsDrawerOpen(false)} />
             }
           />
 
