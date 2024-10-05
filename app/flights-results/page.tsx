@@ -5,13 +5,34 @@ import FlightDetails from "@/components/flight-details";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import VaulDrawer from "@/components/ui/drawer";
+import { FlightDataContext } from "@/context/flight-data-context";
 import { X, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 export default function FlightsResults() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const { fromAirport, toAirport, departureDate, returnDate } =
+    useContext(FlightDataContext);
+
+  const formatDateRange = (start: Date | null, end: Date | null): string => {
+    if (!start && !end) return "Select dates";
+    if (!start) return "Select departure";
+    if (!end) return "Select return";
+
+    const formatDate = (date: Date) => {
+      const month = date.toLocaleString("default", { month: "short" });
+      const day = date.getDate().toString().padStart(2, "0");
+      return `${month} ${day}`;
+    };
+
+    const startFormatted = formatDate(start);
+    const endFormatted = formatDate(end);
+
+    return `${startFormatted} - ${endFormatted}`;
+  };
+
   return (
     <main className="flex flex-col">
       <header className="flex justify-around items-center h-24 border-b">
@@ -20,25 +41,27 @@ export default function FlightsResults() {
           triggerChildren={
             <div className="flex items-center gap-x-3 border rounded-full p-1.5 pl-6 cursor-pointer">
               <div className="flex items-center gap-x-1 text-sm">
-                <h4 className="font-semibold">DEL</h4>
+                <h4 className="font-semibold">{fromAirport?.code}</h4>
                 <p className="font-light text-gray-500">
-                  Indira Gandhi Inter...
+                  {fromAirport?.name.slice(0, 13)}
                 </p>
               </div>
 
               <div className="h-5 border-r"></div>
 
               <div className="flex items-center gap-x-1 text-sm">
-                <h4 className="font-semibold">DXB</h4>
+                <h4 className="font-semibold">{toAirport?.code}</h4>
                 <p className="font-light text-gray-500">
-                  Dubai International...
+                  {toAirport?.name.slice(0, 13)}
                 </p>
               </div>
 
               <div className="h-5 border-r"></div>
 
               <div>
-                <h4 className="font-semibold text-sm">Jun 25 - Jul 2</h4>
+                <h4 className="font-semibold text-sm">
+                  {formatDateRange(departureDate, returnDate)}
+                </h4>
               </div>
 
               <div className="h-5 border-r"></div>
