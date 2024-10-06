@@ -70,9 +70,9 @@ const LoadingComponent = () => {
   );
 
   return (
-    <div>
-      <div className="fixed inset-0 bg-black/20 flex flex-col justify-start py-44 items-center z-50">
-        <div className="flex flex-col items-center justify-start w-72 h-[280px] bg-gray-50 rounded-lg shadow-md p-6">
+    <div className="flex flex-col justify-center items-center overflow-hidden  bg-green-200">
+      <div className="fixed inset-0 bg-black/20 flex flex-col justify-start py-60 md:py-44 items-center z-50">
+        <div className="flex flex-col items-center justify-center md:justify-start md:w-72 h-fit md:h-[280px] bg-gray-50 rounded-lg shadow-md p-6">
           <Image
             src={"/rocket.png"}
             alt="rocket"
@@ -95,14 +95,14 @@ const LoadingComponent = () => {
                 <div className="h-10 w-[40px] bg-gray-100 rounded-lg"></div>
 
                 <div className="flex flex-col gap-y-4">
-                  <h4 className="w-72 h-2.5 rounded-lg bg-gray-100"></h4>
-                  <p className="bg-gray-100 w-96 h-2 rounded-lg"></p>
+                  <h4 className="w-60 md:w-72 h-2.5 rounded-lg bg-gray-100"></h4>
+                  <p className="bg-gray-100 w-68 md:w-96 h-2 rounded-lg"></p>
                 </div>
               </div>
 
-              <div>
+              <div className="hidden md:block">
                 <div className="flex flex-col gap-y-4">
-                  <h4 className="w-72 h-2.5 rounded-lg bg-gray-100"></h4>
+                  <h4 className="w-60 md:w-72 h-2.5 rounded-lg bg-gray-100"></h4>
                   <p className="bg-gray-100 w-96 h-2 rounded-lg"></p>
                 </div>
               </div>
@@ -113,14 +113,14 @@ const LoadingComponent = () => {
                 <div className="h-10 w-[40px] bg-gray-100 rounded-lg"></div>
 
                 <div className="flex flex-col gap-y-4">
-                  <h4 className="w-72 h-2.5 rounded-lg bg-gray-100"></h4>
-                  <p className="bg-gray-100 w-96 h-2 rounded-lg"></p>
+                  <h4 className="w-60 md:w-72 h-2.5 rounded-lg bg-gray-100"></h4>
+                  <p className="bg-gray-100 w-68 md:w-96 h-2 rounded-lg"></p>
                 </div>
               </div>
 
-              <div>
+              <div className="hidden md:block">
                 <div className="flex flex-col gap-y-4">
-                  <h4 className="w-72 h-2.5 rounded-lg bg-gray-100"></h4>
+                  <h4 className="w-60 md:w-72 h-2.5 rounded-lg bg-gray-100"></h4>
                   <p className="bg-gray-100 w-96 h-2 rounded-lg"></p>
                 </div>
               </div>

@@ -6,6 +6,6 @@ type LoadingContextType = {
 };
 
 export const LoadingContext = createContext<LoadingContextType>({
-  isLoading: false,
+  isLoading: true,
   setIsLoading: () => {},
 });
