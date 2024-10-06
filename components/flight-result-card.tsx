@@ -30,7 +30,7 @@ export default function FlightResultCard({
 
   return (
     <Card
-      className="flex flex-col md:flex-row md:justify-between cursor-pointer py-3 md:p-0"
+      className="flex flex-col md:flex-row md:justify-between cursor-pointer py-3 mx-2 md:mx-0 md:p-0"
       onClick={onSelect}
     >
       <CardContent className="w-full flex flex-col justify-center gap-y-2 md:gap-y-8">

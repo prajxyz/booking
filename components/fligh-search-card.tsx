@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react"; // Import useState
+import { useContext, useState } from "react"; // Import useState
 import {
   Card,
   CardContent,
@@ -49,6 +49,19 @@ export default function FlightSearchCard({
     setDepartureDate,
     setReturnDate,
   } = useContext(FlightDataContext);
+
+  const [isDepartureCalendarOpen, setIsDepartureCalendarOpen] = useState(false);
+  const [isReturnCalendarOpen, setIsReturnCalendarOpen] = useState(false);
+
+  const handleDateSelection = (date: Date, isDepature: boolean) => {
+    if (isDepature) {
+      setDepartureDate(date);
+      setIsDepartureCalendarOpen(false);
+    } else {
+      setReturnDate(date);
+      setIsReturnCalendarOpen(false);
+    }
+  };
 
   const { setIsLoading } = useContext(LoadingContext);
   const router = useRouter();
@@ -179,7 +192,10 @@ export default function FlightSearchCard({
         </DropdownMenu>
 
         {/* Dropdown for "Departure" */}
-        <DropdownMenu>
+        <DropdownMenu
+          open={isDepartureCalendarOpen}
+          onOpenChange={setIsDepartureCalendarOpen}
+        >
           <DropdownMenuTrigger asChild>
             <Button
               variant={"outline"}
@@ -207,16 +223,17 @@ export default function FlightSearchCard({
             <Calendar
               mode="single"
               selected={departureDate!}
-              onSelect={(date: Date | undefined) =>
-                date && setDepartureDate(date)
-              }
+              onSelect={(date) => handleDateSelection(date!, true)}
               className="rounded-md border"
             />
           </DropdownMenuContent>
         </DropdownMenu>
 
         {/* Dropdown for "Return" */}
-        <DropdownMenu>
+        <DropdownMenu
+          open={isReturnCalendarOpen}
+          onOpenChange={setIsReturnCalendarOpen}
+        >
           <DropdownMenuTrigger asChild>
             <Button
               variant={"outline"}
@@ -244,7 +261,7 @@ export default function FlightSearchCard({
             <Calendar
               mode="single"
               selected={returnDate!}
-              onSelect={(date: Date | undefined) => date && setReturnDate(date)}
+              onSelect={(date) => handleDateSelection(date!, false)}
               className="rounded-md border"
             />
           </DropdownMenuContent>

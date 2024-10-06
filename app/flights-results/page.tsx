@@ -23,7 +23,7 @@ export default function FlightsResults() {
           <LoadingComponent />
         ) : (
           <section className="flex flex-col px-2 md:px-12 mx-auto my-2">
-            <h4 className="text-zinc-500/80 font-extralight">
+            <h4 className="text-zinc-500 font-extralight px-1 md:px-0">
               Showing 356 of 767 results
             </h4>
 

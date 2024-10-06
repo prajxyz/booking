@@ -70,7 +70,7 @@ const LoadingComponent = () => {
   );
 
   return (
-    <div className="flex flex-col justify-center items-center overflow-hidden  bg-green-200">
+    <div className="flex flex-col justify-center items-center overflow-hidden">
       <div className="fixed inset-0 bg-black/20 flex flex-col justify-start py-60 md:py-44 items-center z-50">
         <div className="flex flex-col items-center justify-center md:justify-start md:w-72 h-fit md:h-[280px] bg-gray-50 rounded-lg shadow-md p-6">
           <Image
