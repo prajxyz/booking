@@ -1,10 +1,9 @@
 "use client";
 
-import { useContext, useEffect, useState } from "react"; // Import useState
+import { useContext } from "react"; // Import useState
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -24,10 +23,12 @@ import {
   Calendar as CalendarIcon,
   ArrowRightLeft,
 } from "lucide-react";
-import Link from "next/link";
 import { airportsData } from "@/data";
 import { Calendar } from "@/components/ui/calendar";
 import { FlightDataContext } from "@/context/flight-data-context";
+import { formatDate } from "@/lib/date";
+import { useRouter } from "next/navigation";
+import { LoadingContext } from "@/context/loading-context";
 
 type FlightSearchCardProps = {
   needBorder: boolean;
@@ -38,14 +39,6 @@ export default function FlightSearchCard({
   needBorder,
   customClass,
 }: FlightSearchCardProps) {
-  const formatDate = (date: Date | null): string => {
-    if (!date) return "";
-    const day = date.getDate().toString().padStart(2, "0");
-    const month = (date.getMonth() + 1).toString().padStart(2, "0");
-    const year = date.getFullYear();
-    return `${day}/${month}/${year}`;
-  };
-
   const {
     fromAirport,
     toAirport,
@@ -56,6 +49,16 @@ export default function FlightSearchCard({
     setDepartureDate,
     setReturnDate,
   } = useContext(FlightDataContext);
+
+  const { setIsLoading } = useContext(LoadingContext);
+  const router = useRouter();
+
+  function handleSearch() {
+    if (fromAirport || toAirport || departureDate || returnDate) {
+      setIsLoading(true);
+      router.push("/flights-results");
+    } else alert("Please enter your data");
+  }
 
   return (
     <Card
@@ -180,7 +183,7 @@ export default function FlightSearchCard({
           <DropdownMenuTrigger asChild>
             <Button
               variant={"outline"}
-              className="flex items-center justify-center gap-x-2 h-12 pr-14"
+              className="flex items-center justify-start gap-x-2 h-12 w-40"
             >
               <div className={`flex items-center justify-center gap-x-2`}>
                 <CalendarIcon
@@ -217,7 +220,7 @@ export default function FlightSearchCard({
           <DropdownMenuTrigger asChild>
             <Button
               variant={"outline"}
-              className="flex items-center justify-center gap-x-2 h-12 pr-14"
+              className="flex items-center justify-start gap-x-2 h-12 w-40"
             >
               <div className={`flex items-center justify-center gap-x-2`}>
                 <CalendarIcon
@@ -248,12 +251,13 @@ export default function FlightSearchCard({
         </DropdownMenu>
       </CardContent>
       <CardFooter className="justify-end mt-2">
-        <Link href={"/flights-results"}>
-          <Button className="flex items-center gap-x-2 bg-brandGreen h-10 px-12">
-            <Search size={14} />
-            Search Flights
-          </Button>
-        </Link>
+        <Button
+          onClick={handleSearch}
+          className="flex items-center gap-x-2 bg-brandGreen hover:bg-brandGreen/90 h-10 px-12"
+        >
+          <Search size={14} />
+          Search Flights
+        </Button>
       </CardFooter>
     </Card>
   );

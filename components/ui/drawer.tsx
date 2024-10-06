@@ -30,7 +30,7 @@ export default function VaulDrawer({
         {triggerChildren}
       </Drawer.Trigger>
       <Drawer.Portal>
-        <Drawer.Overlay className="fixed inset-0 bg-black/40" />
+        <Drawer.Overlay className="fixed inset-0 bg-black/20" />
         <Drawer.Content
           asChild
           className={`bg-gray-100 fixed outline-none ${

@@ -2,6 +2,7 @@
 
 import { ReactNode, useState } from "react";
 import { FlightDataContext } from "@/context/flight-data-context";
+import { LoadingContext } from "@/context/loading-context";
 
 export default function Provider({ children }: { children: ReactNode }) {
   const [fromAirport, setFromAirport] = useState<{
@@ -18,21 +19,24 @@ export default function Provider({ children }: { children: ReactNode }) {
   } | null>(null);
   const [departureDate, setDepartureDate] = useState<Date | null>(null);
   const [returnDate, setReturnDate] = useState<Date | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <FlightDataContext.Provider
-      value={{
-        fromAirport,
-        setFromAirport,
-        toAirport,
-        setToAirport,
-        departureDate,
-        setDepartureDate,
-        returnDate,
-        setReturnDate,
-      }}
-    >
-      {children}
-    </FlightDataContext.Provider>
+    <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
+      <FlightDataContext.Provider
+        value={{
+          fromAirport,
+          setFromAirport,
+          toAirport,
+          setToAirport,
+          departureDate,
+          setDepartureDate,
+          returnDate,
+          setReturnDate,
+        }}
+      >
+        {children}
+      </FlightDataContext.Provider>
+    </LoadingContext.Provider>
   );
 }

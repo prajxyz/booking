@@ -8,7 +8,6 @@ type FlightDetailsProps = {
 export default function FlightDetails({ onClose }: FlightDetailsProps) {
   return (
     <section className="px-2 py-6 ">
-      {/* icon  */}
       <div className="flex items-start">
         <div
           onClick={onClose}
@@ -17,11 +16,8 @@ export default function FlightDetails({ onClose }: FlightDetailsProps) {
           <ArrowLeft size={15} />
         </div>
       </div>
-
       <h4 className="text-lg font-medium px-1.5 my-5">Flight Details</h4>
-
       <hr className="" />
-
       <div className="my-4 grid grid-cols-2 justify-items-center ">
         <div>
           <div className="flex gap-x-2">

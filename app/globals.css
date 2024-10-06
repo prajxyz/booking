@@ -76,3 +76,27 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+
+.progress-container {
+  overflow: hidden;
+  position: relative;
+}
+
+
+.progress-bar {
+  position: absolute;
+  left: 0;
+  animation: marquee 2.5s linear infinite;
+  
+}
+
+
+@keyframes marquee {
+  0% {
+    left: -30%;
+  }
+  100% {
+    left: 100%;
+  }
+}

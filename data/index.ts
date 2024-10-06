@@ -60,3 +60,102 @@ export const airportsData = [
     country: "Japan",
   },
 ];
+
+export const airportResults = [
+  {
+    id: 1,
+    costStartsFrom: "AED 2,456.90",
+    flights: [
+      {
+        dateString: "Thu 25 Jun",
+        imgHref: "/emirites.png",
+        flightName: "Emirates . AT 4334",
+        flightTime: "9:45 AM - 11:45 AM",
+        flightCode: "CDG-DXB",
+        flightDuration: "2h 10min",
+        flightStops: "Non Stop",
+      },
+      {
+        dateString: "Thu 25 Jun",
+        imgHref: "/emirites.png",
+        flightName: "Emirates . AT 4334",
+        flightTime: "9:45 AM - 11:45 AM",
+        flightCode: "CDG-DXB",
+        flightDuration: "2h 10min",
+        flightStops: "Non Stop",
+      },
+    ],
+  },
+  {
+    id: 2,
+    costStartsFrom: "AED 2,456.90",
+    flights: [
+      {
+        dateString: "Thu 25 Jun",
+        imgHref: "/emirites.png",
+        flightName: "Emirates . AT 4334",
+        flightTime: "9:45 AM - 11:45 AM",
+        flightCode: "CDG-DXB",
+        flightDuration: "2h 10min",
+        flightStops: "Non Stop",
+      },
+      {
+        dateString: "Thu 25 Jun",
+        imgHref: "/emirites.png",
+        flightName: "Emirates . AT 4334",
+        flightTime: "9:45 AM - 11:45 AM",
+        flightCode: "CDG-DXB",
+        flightDuration: "2h 10min",
+        flightStops: "Non Stop",
+      },
+    ],
+  },
+  {
+    id: 3,
+    costStartsFrom: "AED 2,456.90",
+    flights: [
+      {
+        dateString: "Thu 25 Jun",
+        imgHref: "/emirites.png",
+        flightName: "Emirates . AT 4334",
+        flightTime: "9:45 AM - 11:45 AM",
+        flightCode: "CDG-DXB",
+        flightDuration: "2h 10min",
+        flightStops: "Non Stop",
+      },
+      {
+        dateString: "Thu 25 Jun",
+        imgHref: "/emirites.png",
+        flightName: "Emirates . AT 4334",
+        flightTime: "9:45 AM - 11:45 AM",
+        flightCode: "CDG-DXB",
+        flightDuration: "2h 10min",
+        flightStops: "Non Stop",
+      },
+    ],
+  },
+  {
+    id: 4,
+    costStartsFrom: "AED 2,456.90",
+    flights: [
+      {
+        dateString: "Thu 25 Jun",
+        imgHref: "/emirites.png",
+        flightName: "Emirates . AT 4334",
+        flightTime: "9:45 AM - 11:45 AM",
+        flightCode: "CDG-DXB",
+        flightDuration: "2h 10min",
+        flightStops: "Non Stop",
+      },
+      {
+        dateString: "Thu 25 Jun",
+        imgHref: "/emirites.png",
+        flightName: "Emirates . AT 4334",
+        flightTime: "9:45 AM - 11:45 AM",
+        flightCode: "CDG-DXB",
+        flightDuration: "2h 10min",
+        flightStops: "Non Stop",
+      },
+    ],
+  },
+];
