@@ -28,7 +28,7 @@ export default function FlightDetails({ onClose }: FlightDetailsProps) {
 
             <div>
               <p className="text-xs text-gray-500/80">Sat 28 Sept • 2:15</p>
-              <h4 className="my-1 text-sm">
+              <h4 className="my-1 text-xs md:text-sm">
                 DXB • Dubai International Airport
               </h4>
             </div>
@@ -43,13 +43,13 @@ export default function FlightDetails({ onClose }: FlightDetailsProps) {
 
             <div>
               <p className="text-xs text-gray-500/80">Sat 28 Sept • 2:15</p>
-              <h4 className="my-1 text-sm">
+              <h4 className="my-1 text-xs md:text-sm">
                 RUH • King Khalid International Airportt
               </h4>
 
-              <p className="flex items-center gap-x-2 text-gray-400 mt-4 pt-6 pl-6">
-                <Clock size={14} />
-                <p className="text-sm"> Layover 2h 25m</p>
+              <p className="flex items-center gap-x-1 md:gap-x-2 text-gray-400 md:mt-4 pt-4 md:pt-6 md:pl-6">
+                <Clock size={12} />
+                <p className="text-xs md:text-sm"> Layover 2h 25m</p>
               </p>
             </div>
           </div>
@@ -63,20 +63,22 @@ export default function FlightDetails({ onClose }: FlightDetailsProps) {
 
             <div>
               <p className="text-xs text-gray-500/80">Sat 28 Sept • 2:15</p>
-              <h4 className="my-1 text-sm">
+              <h4 className="my-1 text-xs md:text-sm">
                 RUH • King Khalid International Airport
               </h4>
             </div>
           </div>
 
           {/* fourth */}
-          <div className="flex gap-x-2">
-            <p className="h-3 w-3 border border-black rounded-full my-2"></p>
-            {/* <p className="h-14 border-l-[1px] border-black"></p> */}
+          <div className="flex gap-x-2 my-2">
+            <div className="flex flex-col justify-start items-center gap-y-2">
+              <p className="h-3 w-3 border border-black rounded-full"></p>
+              {/* <p className="h-14 border-l-[1px] border-black"></p> */}
+            </div>
 
-            <div className="my-2">
+            <div>
               <p className="text-xs text-gray-500/80">Sat 28 Sept • 2:15</p>
-              <h4 className="my-1 text-sm">
+              <h4 className="my-1 text-xs md:text-sm">
                 CDG • Paris - Charles de Gualle Airport
               </h4>
             </div>

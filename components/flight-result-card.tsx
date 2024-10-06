@@ -29,13 +29,16 @@ export default function FlightResultCard({
   const { costStartsFrom, flights } = flightData;
 
   return (
-    <Card className="flex justify-between cursor-pointer" onClick={onSelect}>
-      <CardContent className="w-full flex flex-col justify-center gap-y-8">
+    <Card
+      className="flex flex-col md:flex-row md:justify-between cursor-pointer py-3 md:p-0"
+      onClick={onSelect}
+    >
+      <CardContent className="w-full flex flex-col justify-center gap-y-2 md:gap-y-8">
         {flights.map((item, index) => (
           <div className="" key={index}>
             <p className="text-xs text-gray-500 my-1">{item.dateString}</p>
-            <div className="grid grid-cols-1 gap-y-12">
-              <div className="flex justify-between w-full">
+            <div className="grid grid-cols-1 md:gap-y-12">
+              <div className="flex gap-x-2 md:justify-between w-full">
                 <div className="flex items-center gap-x-4">
                   <div className="">
                     <Image
@@ -49,25 +52,32 @@ export default function FlightResultCard({
 
                   <div className="flex flex-col gap-y-1">
                     <p className="text-xs text-gray-500">{item.flightName}</p>
-                    <h4>{item.flightTime}</h4>
+                    <h4 className="text-[13.5px] md:text-base">
+                      {item.flightTime}
+                    </h4>
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-y-1">
                   <p className="text-gray-500/80 text-xs">{item.flightCode}</p>
-                  <h4 className="text-base">{item.flightDuration}</h4>
+                  <h4 className="text-[13px] md:text-base">
+                    {item.flightDuration}
+                  </h4>
                 </div>
 
-                <div className="align-bottom pt-5">{item.flightStops}</div>
+                <div className="align-bottom pt-5 text-sm md:text-base">
+                  {item.flightStops}
+                </div>
               </div>
             </div>
           </div>
         ))}
       </CardContent>
 
-      <div className="h-52 border-r w-2"></div>
+      <div className="hidden md:block h-52 border-r w-2"></div>
+      <hr className="md:hiden" />
 
-      <CardFooter className="mt-20 w-60">
+      <CardFooter className="mt-4 md:mt-20 md:w-60">
         <div className="flex flex-col gap-y-2 items-start w-full">
           <p className="text-xs text-gray-500/80">from</p>
           <h4 className="text-lg">{costStartsFrom}</h4>

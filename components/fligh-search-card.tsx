@@ -81,7 +81,7 @@ export default function FlightSearchCard({
           </Badge>
         </CardTitle>
       </CardHeader>
-      <CardContent className="flex items-center gap-x-2">
+      <CardContent className="flex flex-col md:flex-row items-center gap-x-2">
         {/* Dropdown for "From" */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -128,7 +128,7 @@ export default function FlightSearchCard({
           </DropdownMenuContent>
         </DropdownMenu>
 
-        <div className="bg-[#F5F7FA] p-3.5 rounded-full">
+        <div className="bg-[#F5F7FA] my-2 md:my-0 p-3.5 rounded-full">
           <ArrowRightLeft size={15} />
         </div>
 
@@ -183,7 +183,7 @@ export default function FlightSearchCard({
           <DropdownMenuTrigger asChild>
             <Button
               variant={"outline"}
-              className="flex items-center justify-start gap-x-2 h-12 w-40"
+              className="flex items-center justify-start gap-x-2 h-12 w-full md:w-40 my-3 md:my-0"
             >
               <div className={`flex items-center justify-center gap-x-2`}>
                 <CalendarIcon
@@ -220,7 +220,7 @@ export default function FlightSearchCard({
           <DropdownMenuTrigger asChild>
             <Button
               variant={"outline"}
-              className="flex items-center justify-start gap-x-2 h-12 w-40"
+              className="flex items-center justify-start gap-x-2 h-12 w-full md:w-40 -mt-0 md:my-0"
             >
               <div className={`flex items-center justify-center gap-x-2`}>
                 <CalendarIcon
@@ -250,7 +250,7 @@ export default function FlightSearchCard({
           </DropdownMenuContent>
         </DropdownMenu>
       </CardContent>
-      <CardFooter className="justify-end mt-2">
+      <CardFooter className=" justify-center w-full md:justify-end mt-2">
         <Button
           onClick={handleSearch}
           className="flex items-center gap-x-2 bg-brandGreen hover:bg-brandGreen/90 h-10 px-12"

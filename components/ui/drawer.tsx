@@ -37,7 +37,7 @@ export default function VaulDrawer({
             drawerDirection === "top" && "top-0 left-0 right-0 h-fit"
           } ${
             drawerDirection === "right" &&
-            "bottom-4 top-4 right-4 w-[700px] rounded-lg z-50 overflow-auto"
+            "bottom-4 top-4 right-2 ml-2 md:ml-0 md:right-4 md:w-[700px] rounded-lg z-50 overflow-hidden"
           }`}
         >
           <div className="p-4 bg-white">{contentChildren}</div>

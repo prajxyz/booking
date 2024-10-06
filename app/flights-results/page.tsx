@@ -18,11 +18,11 @@ export default function FlightsResults() {
     <main className="flex flex-col">
       <Header />
 
-      <section className="w-3/4 px-12 mx-auto my-12">
+      <section className="w-full md:w-3/4 md:px-12 mx-auto my-12">
         {isLoading ? (
           <LoadingComponent />
         ) : (
-          <section className="flex flex-col px-12 mx-auto my-2">
+          <section className="flex flex-col px-2 md:px-12 mx-auto my-2">
             <h4 className="text-zinc-500/80 font-extralight">
               Showing 356 of 767 results
             </h4>
