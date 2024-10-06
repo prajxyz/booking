@@ -54,7 +54,7 @@ export default function FlightSearchCard({
   const router = useRouter();
 
   function handleSearch() {
-    if (fromAirport || toAirport || departureDate || returnDate) {
+    if (fromAirport && toAirport && departureDate && returnDate) {
       setIsLoading(true);
       router.push("/flights-results");
     } else alert("Please enter your data");

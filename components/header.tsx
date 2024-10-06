@@ -5,13 +5,13 @@ import { LoadingContext } from "@/context/loading-context";
 import { formatDateRange } from "@/lib/date";
 import { X, Search } from "lucide-react";
 import Link from "next/link";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 export default function Header() {
   const { fromAirport, toAirport, departureDate, returnDate } =
     useContext(FlightDataContext);
 
-  const { isLoading, setIsLoading } = useContext(LoadingContext);
+  const { isLoading } = useContext(LoadingContext);
 
   return (
     <div>

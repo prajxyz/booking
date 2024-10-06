@@ -43,7 +43,10 @@ const LoadingComponent = () => {
     console.log(isLoading, "is loading");
   }, [isLoading]);
 
-  const renderStep = (step: any, index: number) => (
+  const renderStep = (
+    step: { status: string; text: string },
+    index: number
+  ) => (
     <div key={index} className="flex items-center gap-x-4 my-1">
       <span>
         {step.status === "completed" ? (
@@ -83,7 +86,10 @@ const LoadingComponent = () => {
       </div>
       <div className="grid grid-cols-1 gap-y-6 px-4">
         {[...Array(5)].map((_, index) => (
-          <Card className="animate-pulse w-full py-4 px-4 grid grid-cols-1 gap-y-10 drop-shadow-none shadow-none">
+          <Card
+            key={index}
+            className="animate-pulse w-full py-4 px-4 grid grid-cols-1 gap-y-10 drop-shadow-none shadow-none"
+          >
             <div className="flex justify-between">
               <div className="flex items-center gap-x-4">
                 <div className="h-10 w-[40px] bg-gray-100 rounded-lg"></div>

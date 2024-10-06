@@ -26,13 +26,13 @@ export default function FlightResultCard({
   flightData,
   onSelect,
 }: FlightResultCardProps) {
-  const { id, costStartsFrom, flights } = flightData;
+  const { costStartsFrom, flights } = flightData;
 
   return (
     <Card className="flex justify-between cursor-pointer" onClick={onSelect}>
       <CardContent className="w-full flex flex-col justify-center gap-y-8">
-        {flights.map((item) => (
-          <div className="">
+        {flights.map((item, index) => (
+          <div className="" key={index}>
             <p className="text-xs text-gray-500 my-1">{item.dateString}</p>
             <div className="grid grid-cols-1 gap-y-12">
               <div className="flex justify-between w-full">

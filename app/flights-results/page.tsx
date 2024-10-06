@@ -9,32 +9,15 @@ import { LoadingContext } from "@/context/loading-context";
 import { airportResults } from "@/data";
 import { useContext, useState } from "react";
 
-type FlightData = {
-  id: number;
-  costStartsFrom: string;
-  flights: {
-    dateString: string;
-    imgHref: string;
-    flightName: string;
-    flightTime: string;
-    flightCode: string;
-    flightDuration: string;
-    flightStops: string;
-  }[];
-};
-
 export default function FlightsResults() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  const { isLoading, setIsLoading } = useContext(LoadingContext);
+  const { isLoading } = useContext(LoadingContext);
 
   return (
     <main className="flex flex-col">
       <Header />
 
-      {/* condionally render loading or results component  */}
-
-      {/* results  */}
       <section className="w-3/4 px-12 mx-auto my-12">
         {isLoading ? (
           <LoadingComponent />
