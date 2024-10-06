@@ -19,8 +19,7 @@ export default function FlightsResults() {
       <Header />
 
       <section className="w-full md:w-3/4 md:px-12 mx-auto my-12">
-        <LoadingComponent />
-        {/* {isLoading ? (
+        {isLoading ? (
           <LoadingComponent />
         ) : (
           <section className="flex flex-col px-2 md:px-12 mx-auto my-2">
@@ -58,7 +57,7 @@ export default function FlightsResults() {
               })}
             </div>
           </section>
-        )} */}
+        )}
       </section>
     </main>
   );
